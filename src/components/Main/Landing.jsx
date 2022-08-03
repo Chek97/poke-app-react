@@ -11,7 +11,6 @@ import { Footer } from '../shared/Footer'; // TODO: hacer lo mismo de componente
 export const Landing = () => {
     return (
         <div>
-            <NavBar />
             <header className='text-center p-3'>
                 <h1 className='font-weight-bold'>POKE REACT APP</h1>
             </header>
@@ -61,7 +60,6 @@ export const Landing = () => {
                         </div>
                     </div>
                 </div>
-            <Footer />
             </div>
         </div>
     )
