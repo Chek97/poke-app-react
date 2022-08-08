@@ -1,5 +1,7 @@
 export { BerriesList } from './Berries/BerriesList';
+export { Berrie } from './Berries/Berrie';
 export { ItemsList } from './Items/ItemsList';
+export { Item } from './Items/Item';
 export { Landing } from './Main/Landing';
 export { About } from './Main/About';
 export { PokeList } from './PokeList/PokeList';
