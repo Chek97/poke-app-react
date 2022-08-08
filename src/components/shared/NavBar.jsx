@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import iconLogo from '../../assets/logo2.png';
 
 export const NavBar = () => {
+
+    const [active, setActive] = useState("/");// TODO: hacer esto pero con useParams
+
+    const handleActive = (nav) => setActive(nav);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-primary">
             <a className="navbar-brand" href="/">
@@ -14,17 +19,14 @@ export const NavBar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
-                        <Link className='nav-link' to="/">Inicio</Link>
+                    <li className={`nav-item ${active === '/' && 'active'}`}>
+                        <Link className='nav-link' to="/" onClick={() => handleActive('/')}>Inicio</Link>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Features</a>
+                    <li className={`nav-item ${active === '/about' && 'active'}`}>
+                        <Link className='nav-link' to="/about" onClick={() => handleActive('/about')}>Sobre la App</Link>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link disabled">Disabled</a>
+                    <li className={`nav-item ${active === '/info' && 'active'}`}>
+                        <Link className='nav-link' to="/info" onClick={() => handleActive('/info')}>Informacion</Link>
                     </li>
                 </ul>
             </div>
