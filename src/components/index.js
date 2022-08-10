@@ -5,5 +5,7 @@ export { Item } from './Items/Item';
 export { Landing } from './Main/Landing';
 export { About } from './Main/About';
 export { PokeList } from './PokeList/PokeList';
+export { Pokemon } from './PokeList/Pokemon';
 export { RegionsList } from './Regions/RegionsList';
+export { Region } from './Regions/Region';
 export { Info } from './Info/Info';
