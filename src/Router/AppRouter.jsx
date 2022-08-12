@@ -6,8 +6,7 @@ import {
 } from "react-router-dom";
 import { About, Berrie, BerriesList, Info, Item, ItemsList, Landing, PokeList, Pokemon, Region, RegionsList } from '../components';
 import { Movements } from '../components/PokeList/Movements';
-import { Footer } from '../components/shared/Footer';
-import { NavBar } from '../components/shared/NavBar';
+import { NavBar, Footer } from '../components/shared';
 
 const AppRouter = () => {
   /* 

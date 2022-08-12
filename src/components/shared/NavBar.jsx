@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-import iconLogo from '../../assets/logo2.png';
+import { navLogo } from '../../assets';
 
 export const NavBar = () => {
 
@@ -10,8 +10,8 @@ export const NavBar = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-            <a className="navbar-brand" href="/">
-                <img src={iconLogo} width="50" height="50" alt="" />
+            <a className="navbar-brand text-white" href="/">
+                <img src={navLogo} width="50" height="50" alt="" />
                 {"  "} Poke-React-App
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

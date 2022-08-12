@@ -1,5 +1,4 @@
-import React from 'react';
-import aboutImage from '../../assets/pokemon_about.jpg';
+import { aboutImage } from '../../assets';
 
 export const About = () => {
   return (
