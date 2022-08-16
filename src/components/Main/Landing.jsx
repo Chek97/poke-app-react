@@ -28,7 +28,7 @@ export const Landing = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="items-list" className='card rounded-circle category-container'>
+                        <Link to="berries-list" className='card rounded-circle category-container'>
                             <div className='category-img__container pt-3'>
                                 <img src={berrieIcon} alt="" className='img-fluid' />
                                 <div className='card-body text-center'>
@@ -36,7 +36,7 @@ export const Landing = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="items-list" className='card rounded-circle category-container'>
+                        <Link to="pokemon-list" className='card rounded-circle category-container'>
                             <div className='category-img__container pt-3'>
                                 <img src={pokeballIcon} alt="" className='img-fluid' />
                                 <div className='card-body text-center'>
@@ -44,7 +44,7 @@ export const Landing = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="items-list" className='card rounded-circle category-container'>
+                        <Link to="regions-list" className='card rounded-circle category-container'>
                             <div className='category-img__container pt-3'>
                                 <img src={regionIcon} alt="" className='img-fluid' />
                                 <div className='card-body text-center'>

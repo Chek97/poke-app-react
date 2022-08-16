@@ -1,7 +1,14 @@
 @import url('./landing.css');
+@import url('./items.css');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.text-about {
+    line-height: 2em;
+    text-align: justify;
+    width: 100%;
 }
