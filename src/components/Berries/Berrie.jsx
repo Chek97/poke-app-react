@@ -1,28 +1,10 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useFetch } from '../../hooks/useFetch';
 
 export const Berrie = () => {
 
     const { id } = useParams();
-    const [berrie, setBerrie] = useState({});
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const getBerrieData = async () => {// ? Posibilidad de crear un HOOK
-            try {
-                const request = await fetch(`https://pokeapi.co/api/v2/berry/${id}`);
-                const response = await request.json();
-                setBerrie(response);
-                setLoading(false);
-            } catch (error) {
-                console.log(error);
-                setLoading(false);
-            }
-        }
-        getBerrieData();
-    }, []);
-
-    console.log(berrie);
+    const {list: berrie, loading} = useFetch(`https://pokeapi.co/api/v2/berry/${id}`);
 
   return (
     <div className='container'>

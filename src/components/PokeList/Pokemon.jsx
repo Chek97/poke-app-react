@@ -1,28 +1,10 @@
-import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useFetch } from '../../hooks/useFetch';
 
 export const Pokemon = () => {
 
     const { id } = useParams();
-    const [pokemon, setPokemon] = useState({});
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const getPokemonData = async () => {// ? Posibilidad de crear un HOOK
-            try {
-                const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-                const response = await request.json();
-                setPokemon(response);
-                setLoading(false);
-            } catch (error) {
-                console.log(error);
-                setLoading(false);
-            }
-        }
-        getPokemonData();
-    }, []);
-
-    console.log(pokemon);
+    const { list: pokemon, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 
     return (
         <div className='container'>

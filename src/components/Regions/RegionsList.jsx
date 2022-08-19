@@ -1,35 +1,17 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useFetch } from '../../hooks/useFetch';
 
 export const RegionsList = () => {
 
-  const [regions, setRegions] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getRegionsList = async () => {
-      try {
-        const request = await fetch('https://pokeapi.co/api/v2/region/');
-        const response = await request.json();
-        setRegions(response);
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-        console.log(error);
-      }
-    }
-    getRegionsList();
-  }, []);
+  const {list: regions, loading} = useFetch('https://pokeapi.co/api/v2/region/');
 
   return (
-    <div className='row'>
-      <div className='col-12'>
-        <header className=''>
-          <h1>LISTA DE REGIONES</h1>
+    <div className='row background full-container d-flex justify-content-center'>
+        <header className='col-12 p-3'>
+          <h1 className='font-weight-bold'>LISTA DE REGIONES</h1>
         </header>
-      </div>
       {loading ? (
-        <div className='spinner-border' role="status">
+        <div className='spinner-border spinner-container' role="status">
           <span className='sr-only'>Cargando....</span>
         </div>
       ) : (
@@ -37,15 +19,14 @@ export const RegionsList = () => {
           <p>
             Resultados obtenidos: {regions.count}
           </p>
-          <div className='items-list'>
+          <div className='list-group list-group-horizontal d-flex flex-wrap'>
             {regions.results.map(region => {
               const regionId = region.url.split('/');
               return (
-                <div className='card' style={{ width: '18rem' }} key={region.name}>
-                  <img src="#" alt="" className='card-img-top' />
-                  <div className='card-body'>
-                    <h5 className='card-title'>{region.name}</h5>
-                    <Link to={`/regions-list/${regionId[6]}`} className='btn btn-primary'>Ver mas</Link>
+                <div className='card rounded-circle m-3' key={region.name}>
+                  <div className='card-body text-center'>
+                    <h5 className='card-title font-weight-bold'>{region.name}</h5>
+                    <Link to={`/regions-list/${regionId[6]}`} className='btn btn-secondary rounded'>Ver mas</Link>
                   </div>
                 </div>
               )

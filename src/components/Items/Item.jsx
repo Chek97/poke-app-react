@@ -1,26 +1,10 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useFetch } from '../../hooks/useFetch';
 
 export const Item = () => {
 
     const { id } = useParams();
-    const [item, setItem] = useState({});
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const getItemData = async () => {// ? Posibilidad de crear un HOOK
-            try {
-                const request = await fetch(`https://pokeapi.co/api/v2/item/${id}`);
-                const response = await request.json();
-                setItem(response);
-                setLoading(false);
-            } catch (error) {
-                console.log(error);
-                setLoading(false);
-            }
-        }
-        getItemData();
-    }, []);
+    const {list: item, loading} = useFetch(`https://pokeapi.co/api/v2/item/${id}`);
 
     return (
         <div className='container'>
@@ -50,7 +34,7 @@ export const Item = () => {
                             <h4 className='font-weight-bold'>Atributos</h4>
                             <ul className='list-group'>
                                 {item.attributes.map(att => (
-                                    <li className='list-group-item mt-2 mb-2 text-primary font-weight-bold'>{att.name}</li>
+                                    <li className='list-group-item mt-2 mb-2 text-primary font-weight-bold' key={att.name}>{att.name}</li>
                                 ))}
                             </ul>
                         </div>
