@@ -1,25 +1,9 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import { useFetch } from '../../hooks/useFetch';
 
 export const BerriesList = () => {
 
-  const [berries, setBerries] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getBerriesList = async () => {
-      try {
-        const request = await fetch('https://pokeapi.co/api/v2/berry');
-        const response = await request.json();
-        setBerries(response);
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-        console.log(error);
-      }
-    }
-    getBerriesList();
-  }, []);
+  const { list: berries, loading } = useFetch('https://pokeapi.co/api/v2/berry');
 
   return (
     <div className='row background full-container d-flex justify-content-center'>
@@ -38,7 +22,7 @@ export const BerriesList = () => {
               {berries.results.map((berrie, index) => {
                 const berrieId = berrie.url.split('/');
                 return (
-                  <li className='list-group-item col-12'>{/* //horizontal */}
+                  <li className='list-group-item col-12' key={berrie.name}>{/* //horizontal */}
                     <span>{index + 1} </span>
                     <Link to={`/berries-list/${berrieId[6]}`}>{berrie.name}</Link>
                   </li>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { backgroundImage, berrieIcon, regionIcon, pokeballIcon, potionIcon } from '../../assets';
+import { Search } from './Search';
 
 export const Landing = () => {
     return (
@@ -12,12 +13,7 @@ export const Landing = () => {
                     <img className='img rounded-circle img-fluid' src={backgroundImage} alt="poke-dex" />
                 </div>
                 <div className='col-12'>
-                    <form action="" className='row d-flex justify-content-center mt-5 mb-5'>
-                        <div className='col-10'>
-                            <input type="search" className='form-control' placeholder='Que deseas buscar?' />
-                        </div>
-                        <button type='submit' className='btn btn-success'>Buscar</button>
-                    </form>
+                    <Search />
                     <h2 className='p-3 mb-5 font-weight-bold'>Selecciona una Categoria</h2>
                     <div className='card-deck mt-5 mb-5'>
                         <Link to="items-list" className='card rounded-circle category-container'>

@@ -1,27 +1,9 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useFetch } from '../../hooks/useFetch';
 
 export const PokeList = () => {
 
-  const [pokemons, setPokemons] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  console.log(pokemons);
-
-  useEffect(() => {
-    const getPokemonList = async () => {
-      try {
-        const request = await fetch("https://pokeapi.co/api/v2/pokemon/");
-        const response = await request.json();
-        setPokemons(response);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    }
-    getPokemonList();
-  }, []);
+  const {list: pokemons, loading } = useFetch("https://pokeapi.co/api/v2/pokemon/");
 
   return (
     <div className='row background full-container d-flex justify-content-center'>

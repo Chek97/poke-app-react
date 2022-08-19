@@ -1,30 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom'
+import { useFetch } from '../../hooks/useFetch';
 
 export const ItemsList = () => {
 
-  const [items, setItems] = useState({});
-  const [loading, setLoading] = useState(true);
+  const { list: items, loading } = useFetch('https://pokeapi.co/api/v2/item/');
   const [paginator, setPaginator] = useState({
     total: 0,
     current: 1
   });
-
-  useEffect(() => {
-    const getItemsList = async () => {
-      try {
-        const request = await fetch('https://pokeapi.co/api/v2/item/');
-        const response = await request.json();
-        setItems(response);
-        setLoading(false);
-        setPaginator({...paginator, total: Math.round(response.count / 20)});
-      } catch (error) {
-        setLoading(false);
-        console.log(error);
-      }
-    }
-    getItemsList();
-  }, []);
 
   return (
     <div className='row background full-container d-flex justify-content-center'>
