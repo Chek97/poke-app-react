@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
+import { Return } from '../shared/Return';
 
 export const RegionsList = () => {
 
@@ -8,7 +9,7 @@ export const RegionsList = () => {
   return (
     <div className='row background full-container d-flex justify-content-center'>
         <header className='col-12 p-3'>
-          <h1 className='font-weight-bold'>LISTA DE REGIONES</h1>
+          <h1 className='font-weight-bold'><Return /> LISTA DE REGIONES</h1>
         </header>
       {loading ? (
         <div className='spinner-border spinner-container' role="status">

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { useFetch } from '../../hooks/useFetch';
+import { Return } from '../shared/Return';
 
 export const ItemsList = () => {
 
@@ -13,7 +14,7 @@ export const ItemsList = () => {
   return (
     <div className='row background full-container d-flex justify-content-center'>
       <header className='col-12 p-3'>
-        <h1 className='font-weight-bold'>LISTA DE ITEMS</h1>
+        <h1 className='font-weight-bold'><Return /> LISTA DE ITEMS</h1>
       </header>
       {loading ? ( // ? para mirar si un objeto es vacio Object.keys(items).length === 0
         <div className='spinner-border spinner-container' role="status">
