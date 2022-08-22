@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
+import { Return } from '../shared';
 
 export const PokeList = () => {
 
@@ -8,7 +9,7 @@ export const PokeList = () => {
   return (
     <div className='row background full-container d-flex justify-content-center'>
       <header className='col-12 p-3'>
-        <h1 className='font-weight-bold'>LISTA DE POKEMON</h1>
+        <h1 className='font-weight-bold'><Return /> LISTA DE POKEMON</h1>
       </header>
       {loading ? (
         <div className='spinner-border spinner-container' role="status">

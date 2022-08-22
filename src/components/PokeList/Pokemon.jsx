@@ -1,10 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
+import { Return } from '../shared';
 
 export const Pokemon = () => {
 
     const { id } = useParams();
     const { list: pokemon, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    console.log(pokemon);
 
     return (
         <div className='container'>
@@ -15,6 +17,7 @@ export const Pokemon = () => {
             ) : (
                 <div className='row'>
                     <div className='col-4 background'>
+                        <Return />
                         <div className='img-item__container'>
                             <img 
                                 src={pokemon.sprites.front_default} 
@@ -35,13 +38,13 @@ export const Pokemon = () => {
                         </div>
                         <div className='alert alert-dark rounded mt-4 mb-4'>
                             <h3 className='font-weight-bold'>Movimientos</h3>
-                            <Link to={`/movements/${id}`} className='btn btn-outline-secondary'>Ver Movimientos</Link>{/* //TODO: continuar con la pagina */}
+                            <Link to={`/movements/${id}`} className='btn btn-outline-secondary'>Ver Movimientos</Link>
                         </div>
                         <div className='alert alert-info rounded mt-4 mb-4'>
                             <h3 className='font-weight-bold'>Ancho: <small>{pokemon.weight}</small></h3>
                         </div>
                         <div className='alert alert-secondary rounded mt-4 mb-4'>
-                            <ul className='list-group list-group-flush '>
+                            <ul className='list-group list-group-flush'>
                                 <h5 className='font-weight-bold pb-3'>Tipo</h5>
                                 {pokemon.types.map(type => (
                                     <li key={type.slot} className="list-group-item rounded mb-2">{type.type.name}</li>

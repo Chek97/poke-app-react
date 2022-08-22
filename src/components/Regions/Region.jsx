@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import { Return } from "../shared/Return";
 
 
 export const Region = () => {
@@ -17,7 +18,7 @@ export const Region = () => {
                 <>
                     <div className="col-6">
                         <header className="m-3">
-                            <h4 className='font-weight-bold'>Ubicaciones</h4>
+                            <h4 className='font-weight-bold'><Return /> Ubicaciones</h4>
                         </header>
                         <ul className="list-group">
                             {region.locations.map(location => (

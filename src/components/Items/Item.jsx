@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
+import { Return } from '../shared/Return';
 
 export const Item = () => {
 
@@ -16,6 +17,7 @@ export const Item = () => {
                 <div className='row'>
                     <div className='col-4 background'>{/* //TODO: cambiar el color */}
                         <div className='img-item__container'>
+                            <Return />
                             <img src={item.sprites.default} className="img-thumbnail rounded-circle img-fluid item-img m-3" alt="Imagen del item" />
                         </div>
                     </div>

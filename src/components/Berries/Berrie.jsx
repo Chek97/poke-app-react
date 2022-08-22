@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
+import { Return } from '../shared/Return';
 
 export const Berrie = () => {
 
@@ -19,7 +20,7 @@ export const Berrie = () => {
                         <img src="#" alt="" className="img-thumbnail rounded-circle img-fluid item-img mb-3 mt-3" />{/* //TODO: hacer otra peticion para obtener la img */}
                     </div>
                     <div className='mt-5 mb-4'>
-                        <h4>Nombre completo: <small>{berrie.item.name}</small></h4>
+                        <h4><Return /> Nombre completo: <small>{berrie.item.name}</small></h4>
                     </div>
                     <div className='alert alert-dark rounded mt-4 mb-4'>
                         <h5 className='font-weight-bold'>Sabores y cantidad</h5>
