@@ -19,7 +19,7 @@ export const Search = () => {
     }
 
     return (
-        <>
+        <div className="search-container">
             <form onSubmit={searchSubmit} className='row d-flex justify-content-center mt-5 mb-5'>
                 <div className='col-10'>
                     <input
@@ -38,13 +38,13 @@ export const Search = () => {
                     <h4 className="font-weight-bold">Resultados</h4>
                     <ul className="list-group">
                         {matches.length === 0 ? (
-                            <div className="alert alert-warning">No se encontraron resultados para <strong>"{search}"</strong></div>
+                            <div className="alert alert-warning rounded">No se encontraron resultados para <strong>"{search}"</strong></div>
                         ) : (matches.map(match => (
-                            <li className="list-group-item" key={match}>{match}</li>
+                            <li className="list-group-item rounded" key={match}>{match}</li>
                         )))}
                     </ul>
                 </div>
             )}
-        </>
+        </div>
     )
 }

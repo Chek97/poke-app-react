@@ -2,7 +2,7 @@ import { aboutImage } from '../../assets';
 
 export const About = () => {
   return (
-    <div className='background'>
+    <div className='background about_image_container'>
         <div className='row container'>
             <header className='col-12 p-3'>
                 <h1 className='font-weight-bold'>Sobre La Aplicacion</h1>
@@ -22,7 +22,7 @@ export const About = () => {
                     autem iure odit consequuntur odio accusamus quae vel eligendi? Iste, minima quidem.
                 </p>
             </div>
-            <div className='col-12'>
+            <div className='col-12 about_image'>
                 <img 
                     src={aboutImage} 
                     alt=""
