@@ -1,10 +1,19 @@
 @import url('./landing.css');
 @import url('./items.css');
+@import url('./search.css');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.main-text-logo {
+    padding: 10px;
+}
+
+.main-text-logo:hover {
+    background-color: #0b4a92;
 }
 
 .text-about {

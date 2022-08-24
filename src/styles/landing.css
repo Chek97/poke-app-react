@@ -1,19 +1,40 @@
 .background {
-    background-color: azure;
+    background-image: linear-gradient(to top, #2780e3, #7b98e5, #abb2e8, #d0cfeb, #eeeeee);
 }
 
 .category-container {
     background-color: #2780E3;
+    max-width: 200px;
 }
 
 .category-img__container {
     text-align: center;
     border-radius: 100%;
-    width: 100%;
 }
 
 .category-container:hover {
     background-color: #73b4ff;
     border: 2px solid #2780e3;
     text-decoration: none;
+}
+
+.card-list {
+    padding: 50px 5%;
+}
+
+.category-img__photo {
+    width: 100px;
+    height: 100px;
+}
+
+.about_image_container {
+    width: 100%;
+}
+
+.about_image {
+    text-align: center;
+}
+
+.collapse-container {
+    border-right: 2px solid #2780e3;
 }

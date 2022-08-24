@@ -10,7 +10,7 @@ export const NavBar = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-            <a className="navbar-brand text-white" href="/">
+            <a className="navbar-brand text-white main-text-logo rounded" href="/">
                 <img src={navLogo} width="50" height="50" alt="" />
                 {"  "} Poke-React-App
             </a>
@@ -19,14 +19,14 @@ export const NavBar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ml-auto">
-                    <li className={`nav-item ${active === '/' && 'active'}`}>
-                        <Link className='nav-link' to="/" onClick={() => handleActive('/')}>Inicio</Link>
+                    <li className={`nav-item main-text-logo ${active === '/' && 'font-weight-bold'}`}>
+                        <Link className='nav-link text-white' to="/" onClick={() => handleActive('/')}>Inicio</Link>
                     </li>
-                    <li className={`nav-item ${active === '/about' && 'active'}`}>
-                        <Link className='nav-link' to="/about" onClick={() => handleActive('/about')}>Sobre la App</Link>
+                    <li className={`nav-item main-text-logo ${active === '/about' && 'font-weight-bold'}`}>
+                        <Link className='nav-link text-white' to="/about" onClick={() => handleActive('/about')}>Sobre la App</Link>
                     </li>
-                    <li className={`nav-item ${active === '/info' && 'active'}`}>
-                        <Link className='nav-link' to="/info" onClick={() => handleActive('/info')}>Informacion</Link>
+                    <li className={`nav-item main-text-logo ${active === '/info' && 'font-weight-bold'}`}>
+                        <Link className='nav-link text-white' to="/info" onClick={() => handleActive('/info')}>Informacion</Link>
                     </li>
                 </ul>
             </div>
