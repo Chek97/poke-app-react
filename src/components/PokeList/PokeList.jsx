@@ -7,24 +7,26 @@ export const PokeList = () => {
   const {list: pokemons, loading } = useFetch("https://pokeapi.co/api/v2/pokemon/");
 
   return (
-    <div className='row background full-container d-flex justify-content-center'>
-      <header className='col-12 p-3'>
-        <h1 className='font-weight-bold'><Return /> LISTA DE POKEMON</h1>
+    <div className='row background d-flex justify-content-center pl-4 pr-4'>
+      <div className='col-xs-12 p-3 mr-auto'>
+        <Return />
+      </div>
+      <header className='col-xs-12 p-2 text-center'>
+        <h1 className='font-weight-bold'> LISTA DE POKEMON</h1>
       </header>
       {loading ? (
         <div className='spinner-border spinner-container' role="status">
           <span className='sr-only'>Cargando....</span>
         </div>
       ) : (
-        <div className='col-12'>
+        <div className='col-xs-12 list-items'>
           <p>Resultados Obtenidos: {pokemons.count}</p>
-          <div className='list-group list-group-horizontal d-flex flex-wrap'>
+          <div className='list-group list-group-horizontal list-items-list'>
             {pokemons.results.map(pokemon => {
               const pokemonId = pokemon.url.split('/');
               return (
-                <div className='card rounded-circle m-3' key={pokemon.name}>
-                  <img src="#" alt="" className='card-img-top' />
-                  <div className='card-body text-center'>
+                <div className='card rounded-circle list-card' key={pokemon.name}>
+                  <div className='card-body text-center list-card-item'>
                     <h5 className='card-title font-weight-bold'>{pokemon.name}</h5>
                     <Link to={`/pokemon-list/${pokemonId[6]}`} className='btn btn-secondary rounded'>Ver mas</Link>
                   </div>

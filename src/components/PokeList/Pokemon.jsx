@@ -9,24 +9,26 @@ export const Pokemon = () => {
     console.log(pokemon);
 
     return (
-        <div className='container'>
+        <div className='container background'>
             {loading ? (
                 <div className='spinner-border spinner-container' role="status">
                     <span className='sr-only'>Cargando....</span>
                 </div>
             ) : (
-                <div className='row'>
-                    <div className='col-4 background'>
+                <div className='row d-flex justify-content-center pl-4 pr-4'>
+                    <div className='col-xs-12 p-3 mr-auto'>
                         <Return />
+                    </div>
+                    <div className='col-xs-12'>
                         <div className='img-item__container'>
                             <img 
                                 src={pokemon.sprites.front_default} 
                                 alt={pokemon.name} 
-                                className="img-thumbnail rounded-circle img-fluid item-img m-3" 
+                                className="img-thumbnail rounded-circle img-fluid item-img" 
                             />
                         </div>
                     </div>
-                    <div className='col-8'>
+                    <div className='col-xs-12'>
                         <header className='mt-3'>
                             <h2 className='font-weight-bold'>Nombre: <small>{pokemon.name}</small></h2>
                         </header>

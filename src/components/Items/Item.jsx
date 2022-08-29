@@ -8,17 +8,19 @@ export const Item = () => {
     const {list: item, loading} = useFetch(`https://pokeapi.co/api/v2/item/${id}`);
 
     return (
-        <div className='container'>
+        <div className='container background'>
             {loading ? (
                 <div className='spinner-border spinner-container' role="status">
                     <span className='sr-only'>Cargando....</span>
                 </div>
             ) : (
-                <div className='row'>
-                    <div className='col-4 background'>{/* //TODO: cambiar el color */}
+                <div className='row d-flex justify-content-center pl-4 pr-4'>
+                    <div className='col-xs-12 p-3 mr-auto'>
+                        <Return />
+                    </div>
+                    <div className='col-xs-12'>{/* //TODO: cambiar el color */}
                         <div className='img-item__container'>
-                            <Return />
-                            <img src={item.sprites.default} className="img-thumbnail rounded-circle img-fluid item-img m-3" alt="Imagen del item" />
+                            <img src={item.sprites.default} className="img-thumbnail rounded-circle img-fluid item-img" alt="Imagen del item" />
                         </div>
                     </div>
                     <div className='col-8'>

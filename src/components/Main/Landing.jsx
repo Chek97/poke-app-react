@@ -14,7 +14,7 @@ export const Landing = () => {
                 </div>
                 <div className='col-12 col-xs-12'>
                     <Search />
-                    <h2 className='pl-5 mb-5 font-weight-bold'>Selecciona una Categoria</h2>
+                    <h2 className='text-center p-3 font-weight-bold'>Selecciona una Categoria</h2>
                     <div className='card-deck card-list'>
                         <Link to="items-list" className='card rounded-circle category-container'>
                             <div className='category-img__container pt-3'>

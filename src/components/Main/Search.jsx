@@ -21,7 +21,7 @@ export const Search = () => {
     return (
         <div className="search-container">
             <form onSubmit={searchSubmit} className='row d-flex justify-content-center mt-5 mb-5'>
-                <div className='col-10'>
+                <div className='col-xs-12'>
                     <input
                         type="search"
                         className='form-control'
@@ -31,7 +31,9 @@ export const Search = () => {
                         onChange={handleSearch}
                     />
                 </div>
-                <button type='submit' className='btn btn-success'>Buscar</button>
+                <div className="col-xs-12 pl-1">
+                    <button type='submit' className='btn btn-success'>Buscar</button>
+                </div>
             </form>
             {flag && (
                 <div className="container">

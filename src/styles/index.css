@@ -1,6 +1,7 @@
 @import url('./landing.css');
 @import url('./items.css');
 @import url('./search.css');
+@import url('./media.css');
 
 * {
     padding: 0;

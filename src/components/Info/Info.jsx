@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export const Info = () => {
   return (
     <div className='row background'>
-        <div className='col-3 collapse-container'>
+        <div className='col-xs-12 collapse-container info-collapse'>
             <div className="text-center mt-2">
                 <h3 className="font-weight-bold">Secciones</h3>
             </div>
@@ -22,7 +22,7 @@ export const Info = () => {
                 </li>
             </ul>
         </div>
-        <div className='col-9'>
+        <div className='col-xs-12 info-collapse text-center'>
             <header className="p-3">
                 <h2 className="font-weight-bold">Informacion Detallada</h2>
             </header>
