@@ -16,10 +16,10 @@ export const Movements = () => {
         </div>
       ) : (
         <div className="row d-flex justify-content-center pl-4 pr-4">
-          <div className="col-xs-12 p-3 mr-auto">
+          <div className="col-xs-12 col-sm-12 p-3 mr-auto">
             <Return />
           </div>
-          <div className="col-xs-12">
+          <div className="col-xs-12 col-sm-12">
             <header className="mt-3 mb-3">
               <h4 className="font-weight-bold">
               Movimientos de: <small>{pokemon.name}</small></h4>

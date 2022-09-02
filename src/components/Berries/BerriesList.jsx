@@ -8,10 +8,10 @@ export const BerriesList = () => {
 
   return (
     <div className='row background d-flex justify-content-center pl-4 pr-4'>
-      <div className='col-xs-12 p-3 mr-auto'>
+      <div className='col-xs-12 col-sm-12 p-3 mr-auto'>
         <Return />
       </div>
-      <header className='col-xs-12 p-2 text-center'>
+      <header className='col-xs-12 col-sm-12 p-2 text-center'>
         <h1 className='font-weight-bold'> LISTA DE BAYAS</h1>
       </header>
       {loading ? (
@@ -20,7 +20,7 @@ export const BerriesList = () => {
         </div>
       ) : (
         <>
-          <div className='col-xs-12'>
+          <div className='col-xs-12 col-sm-12'>
             <p>Resultados Obtenidos: {berries.count}</p>
             <ul className='list-group row'>
               {berries.results.map((berrie, index) => {

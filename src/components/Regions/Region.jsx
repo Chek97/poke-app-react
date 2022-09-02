@@ -9,27 +9,27 @@ export const Region = () => {
     const {list: region, loading } = useFetch(`https://pokeapi.co/api/v2/region/${id}`);
 
     return (
-        <div className="container background">
+        <div className="background region-container">
             {loading ? (
                 <div className='spinner-border spinner-container' role="status">
                     <span className='sr-only'>Cargando....</span>
                 </div>
             ): (
                 <div className="row d-flex justify-content-center pl-4 pr-4">
-                    <div className="col-xs-12">
-                        <div className="col-xs-12 p-3 mr-auto">
-                            <Return />
-                        </div>
-                        <header className="col-xs-12 m-3">
-                            <h4 className='font-weight-bold'> Ubicaciones</h4>
-                        </header>
+                    <div className="col-xs-12 col-sm-12 p-3 mr-auto">
+                        <Return />
+                    </div>
+                    <header className="col-xs-12 col-sm-12 m-3">
+                        <h4 className='font-weight-bold'> Ubicaciones</h4>
+                    </header>
+                    <div className="col-xs-12 col-sm-12">
                         <ul className="list-group">
                             {region.locations.map(location => (
                                 <li className="list-group-item mb-1 mt-1" key={location.name}>{location.name}</li>
                             ))}
                         </ul>
                     </div>
-                    <div className="col-xs-12">
+                    <div className="col-xs-12 col-sm-12">
                         <header className="mt-3">
                             <h2 className="font-weight-bold">Region: <small>{region.name}</small></h2>
                         </header>

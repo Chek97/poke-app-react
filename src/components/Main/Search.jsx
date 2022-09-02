@@ -20,18 +20,18 @@ export const Search = () => {
 
     return (
         <div className="search-container">
-            <form onSubmit={searchSubmit} className='row d-flex justify-content-center mt-5 mb-5'>
-                <div className='col-xs-12'>
+            <form onSubmit={searchSubmit} className='row mt-5 mb-5'>
+                <div className='col-xs-12 col-sm-10 form-search '>
                     <input
                         type="search"
-                        className='form-control'
+                        className='form-control input-search'
                         placeholder='Que deseas buscar?'
                         name='search'
                         value={search}
                         onChange={handleSearch}
                     />
                 </div>
-                <div className="col-xs-12 pl-1">
+                <div className="col-xs-12 col-sm-2 button-search">
                     <button type='submit' className='btn btn-success'>Buscar</button>
                 </div>
             </form>

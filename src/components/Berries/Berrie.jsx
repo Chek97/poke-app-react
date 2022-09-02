@@ -15,10 +15,10 @@ export const Berrie = () => {
             </div>
         ) : (
             <div className='row d-flex justify-content-center pl-4 pr-4'>
-                <div className='col-xs-12 p-3 mr-auto'>
+                <div className='col-xs-12 col-sm-12 p-3 mr-auto'>
                     <Return />
                 </div>
-                <div className='col-xs-12'>
+                <div className='col-xs-12  col-sm-12'>
                     <header className='alert alert-primary rounded  text-center mt-3'>
                         <h2 className='font-weight-bold'>{berrie.name}</h2>
                     </header>
@@ -31,7 +31,7 @@ export const Berrie = () => {
                         <p>Tipo naturaleza: <span className='font-weight-bold pl-2'>{berrie.natural_gift_type.name}</span></p>
                     </div>
                 </div>
-                <div className='col-xs-12'>
+                <div className='col-xs-12 col-sm-12'>
                     <div className='mt-5 mb-4'>
                         <h4> Nombre completo: <small>{berrie.item.name}</small></h4>
                     </div>
