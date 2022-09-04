@@ -9,7 +9,7 @@ export const Movements = () => {
   const { moves } = pokemon;
 
   return (
-    <div className="container background">
+    <div className="background">
       {loading ? (
         <div className='spinner-border spinner-container' role="status">
           <span className='sr-only'>Cargando....</span>

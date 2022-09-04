@@ -116,7 +116,44 @@
 
 /* md 576 */
 @media (min-width: 576px) and (max-width:  992px){
+    .landing-container {
+        height: 100vh;
+    }
 
+    .category-container {
+        width: 150px;
+        height: 180px;
+    }
+    
+    .category-img__photo {
+        width: 50%;
+        height: 50%;
+    }
+
+    .list-items > p {
+        text-align: center;
+        padding: 10px 0;
+        margin: 10px 0;
+    }
+    
+    .list-items-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .list-card {
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+    }
+
+    .list-card-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* lg 992 */
