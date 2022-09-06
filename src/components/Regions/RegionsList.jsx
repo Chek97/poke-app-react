@@ -11,7 +11,7 @@ export const RegionsList = () => {
         <div className='col-xs-12 col-sm-12 p-3 mr-auto'>
           <Return />
         </div>
-        <header className='col-xs-12 col-sm-12 p-2 text-center'>
+        <header className='col-xs-12 col-sm-12 col-lg-12 p-2 text-center'>
           <h1 className='font-weight-bold'> LISTA DE REGIONES</h1>
         </header>
       {loading ? (
@@ -19,7 +19,7 @@ export const RegionsList = () => {
           <span className='sr-only'>Cargando....</span>
         </div>
       ) : (
-        <div className='col-xs-12 col-sm-12 list-items'>
+        <div className='col-xs-12 col-sm-12 col-lg-12 list-items landing-container'>
           <p>
             Resultados obtenidos: {regions.count}
           </p>

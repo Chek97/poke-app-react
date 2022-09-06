@@ -158,5 +158,41 @@
 
 /* lg 992 */
 @media (min-width: 992px) and (max-width:  1200px){
+    .card-list {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .about_image_container {
+        height: 100vh;
+    }
 
+    .list-items > p {
+        text-align: center;
+        padding: 10px 0;
+        margin: 10px 0;
+    }
+
+    .list-items-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .list-card {
+        background-color: #2780E3;
+        color: #fff;
+        width: 150px;
+        height: 150px;
+        margin: 20px;
+    }
+
+    .landing-container {
+        height: 100vh;
+    }
+
+    .img-item__container {
+        margin: auto;
+    }
 }

@@ -13,10 +13,10 @@ export const ItemsList = () => {
 
   return (
     <div className='row background d-flex justify-content-center pl-4 pr-4'>
-      <div className='col-xs-12 col-sm-12 col-md-12 p-3 mr-auto'>
+      <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 p-3 mr-auto'>
         <Return />
       </div>
-      <header className='col-xs-12 col-sm-12 col-md-12 p-2 text-center'>
+      <header className='col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2 text-center'>
         <h1 className='font-weight-bold'> LISTA DE ITEMS</h1>
       </header>
       {loading ? ( // * para mirar si un objeto es vacio Object.keys(items).length === 0
@@ -25,7 +25,7 @@ export const ItemsList = () => {
         </div>
       ) : (
         <>
-          <div className='col-xs-12 col-sm-12 col-md-12 list-items'>
+          <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 list-items'>
             <p>
               Resultados obtenidos: {items.count}
             </p>
