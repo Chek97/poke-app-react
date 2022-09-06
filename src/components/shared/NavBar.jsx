@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { navLogo } from '../../assets';
 
 export const NavBar = () => {
 
-    const [active, setActive] = useState("/");// TODO: hacer esto pero con useParams
-
-    const handleActive = (nav) => setActive(nav);
+    const location = useLocation();
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-primary">
@@ -19,14 +16,14 @@ export const NavBar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ml-auto">
-                    <li className={`nav-item main-text-logo ${active === '/' && 'font-weight-bold'}`}>
-                        <Link className='nav-link text-white' to="/" onClick={() => handleActive('/')}>Inicio</Link>
+                    <li className={`nav-item main-text-logo ${location.pathname === '/' && 'font-weight-bold'}`}>
+                        <Link className='nav-link text-white' to="/">Inicio</Link>
                     </li>
-                    <li className={`nav-item main-text-logo ${active === '/about' && 'font-weight-bold'}`}>
-                        <Link className='nav-link text-white' to="/about" onClick={() => handleActive('/about')}>Sobre la App</Link>
+                    <li className={`nav-item main-text-logo ${location.pathname === '/about' && 'font-weight-bold'}`}>
+                        <Link className='nav-link text-white' to="/about">Sobre la App</Link>
                     </li>
-                    <li className={`nav-item main-text-logo ${active === '/info' && 'font-weight-bold'}`}>
-                        <Link className='nav-link text-white' to="/info" onClick={() => handleActive('/info')}>Informacion</Link>
+                    <li className={`nav-item main-text-logo ${location.pathname === '/info' && 'font-weight-bold'}`}>
+                        <Link className='nav-link text-white' to="/info">Informacion</Link>
                     </li>
                 </ul>
             </div>
