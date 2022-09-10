@@ -5,11 +5,17 @@ import { Return } from '../shared/Return';
 
 export const ItemsList = () => {
 
-  const { list: items, loading } = useFetch('https://pokeapi.co/api/v2/item/');
-  const [paginator, setPaginator] = useState({
-    total: 0,
-    current: 1
-  });
+  const [offset, setOffset] = useState(0);
+
+  const { list: items, loading } = useFetch(`https://pokeapi.co/api/v2/item/?offset=${offset}&limit=20`, offset);
+  
+  const handleList = (arg) => {
+    if(arg === 'sig'){
+      setOffset(offset + 20);
+    }else{
+      setOffset(offset - 20);
+    }
+  }
 
   return (
     <div className='row background d-flex justify-content-center pl-4 pr-4'>
@@ -44,15 +50,12 @@ export const ItemsList = () => {
             </div>
           </div>
           <hr />
-          <ul className='pagination'>
+          <ul className='pagination mt-5'>
             <li className={`page-item ${items.previous === null && "disabled"}`}>
-              <Link className='page-link' to={`/items-list/${30}`}>Anterior</Link>
+              <button className='page-link' onClick={() => handleList('ant')}>Anterior</button>
             </li>
-            <li className='page-item'><a className='page-link' href="#">1</a></li>
-            <li className='page-item'><a className='page-link' href="#">2</a></li>
-            <li className='page-item'><a className='page-link' href="#">3</a></li>
             <li className={`page-item ${items.next === null && "disabled"}`}>
-              <Link className='page-link' to={`/items-list/${80}`}>Siguiente</Link>
+              <button className='page-link' onClick={() => handleList('sig')}>Siguiente</button>
             </li>
           </ul>
         </>

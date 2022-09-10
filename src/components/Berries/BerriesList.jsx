@@ -1,10 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
 import { Return } from '../shared/Return';
 
 export const BerriesList = () => {
 
-  const { list: berries, loading } = useFetch('https://pokeapi.co/api/v2/berry');
+  const [offset, setOffset] = useState(0);
+  const { list: berries, loading } = useFetch(`https://pokeapi.co/api/v2/berry/?offset=${offset}&limit=20`, offset);
+
+  const handleList = (arg) => {
+    if(arg === 'sig'){
+      setOffset(offset + 20);
+    }else{
+      setOffset(offset - 20);
+    }
+  }
 
   return (
     <div className='row background d-flex justify-content-center pl-4 pr-4'>
@@ -36,12 +46,13 @@ export const BerriesList = () => {
             </ul>
           </div>
           <hr />
-          <ul className='pagination'>
-            <li className='page-item'><a className='page-link' href="#">Anterior</a></li>{/*// TODO: ESTO TAMBIEN DEBE HACERSE CON LINK */}
-            <li className='page-item'><a className='page-link' href="#">1</a></li>
-            <li className='page-item'><a className='page-link' href="#">2</a></li>
-            <li className='page-item'><a className='page-link' href="#">3</a></li>
-            <li className='page-item'><a className='page-link' href="#">Siguiente</a></li>
+          <ul className='pagination mt-5'>
+            <li className={`page-item ${berries.previous === null && "disabled"}`}>
+              <button className='page-link' onClick={() => handleList('ant')}>Anterior</button>
+            </li>
+            <li className={`page-item ${berries.next === null && "disabled"}`}>
+              <button className='page-link' onClick={() => handleList('sig')}>Siguiente</button>
+            </li>
           </ul>
         </>
       )}
