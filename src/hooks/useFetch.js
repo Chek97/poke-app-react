@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useFetch = (url) => {
+export const useFetch = (url, offset) => {
 
     const [list, setList] = useState({});
     const [loading, setLoading] = useState(true);
@@ -8,6 +8,7 @@ export const useFetch = (url) => {
     useEffect(() => {
         const getListData = async () => {
             try {
+                setLoading(true);
                 const request = await fetch(url);
                 const response = await request.json();
                 setList(response);
@@ -18,7 +19,7 @@ export const useFetch = (url) => {
             }
         }
         getListData();
-    }, []);
+    }, [offset]);
 
     return {
         list,

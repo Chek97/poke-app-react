@@ -1,10 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
 import { Return } from '../shared';
 
 export const PokeList = () => {
 
-  const {list: pokemons, loading } = useFetch("https://pokeapi.co/api/v2/pokemon/");
+  const [offset, setOffset] = useState(0)
+  const { list: pokemons, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`, offset);
+
+  const handleList = (arg) => {
+    if (arg === 'sig') {
+      setOffset(offset + 20);
+    } else {
+      setOffset(offset - 20);
+    }
+  }
 
   return (
     <div className='row background d-flex justify-content-center pl-4 pr-4'>
@@ -36,21 +46,15 @@ export const PokeList = () => {
           </div>
         </div>
       )}
-      <nav aria-label="...">
-        <ul className="pagination">
-          <li className="page-item disabled">
-            <span className="page-link">Anterior</span>
-          </li>
-          <li className="page-item"><a className="page-link" href="#">1</a></li>
-          <li className="page-item active" aria-current="page">
-            <span className="page-link">2</span>
-          </li>
-          <li className="page-item"><a className="page-link" href="#">3</a></li>
-          <li className="page-item">
-            <a className="page-link" href="#">Siguiente</a>
-          </li>
-        </ul>
-      </nav>
+      <hr />
+      <ul className='pagination mt-5'>
+        <li className={`page-item ${pokemons.previous === null && "disabled"}`}>
+          <button className='page-link' onClick={() => handleList('ant')}>Anterior</button>
+        </li>
+        <li className={`page-item ${pokemons.next === null && "disabled"}`}>
+          <button className='page-link' onClick={() => handleList('sig')}>Siguiente</button>
+        </li>
+      </ul>
     </div>
   )
 }

@@ -30,7 +30,6 @@ const AppRouter = () => {
         <Route path='/regions-list/:id' element={<Region />} />
         {/* ITEMS */}
         <Route path='/items-list' element={<ItemsList />} />
-        <Route path='/items-list/:current' element={<ItemsList />} />
         <Route path='/items/:id' element={<Item />} />
         {/* OTHERS */}
         <Route path='/about' element={<About />} />
